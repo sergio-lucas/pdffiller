@@ -7,7 +7,7 @@
                 updateTime: 1000,
                 elements: [
                     {
-                        background: '#ddd',
+                        background: '#2196f3',
                         width: 25
                     },
                     {
@@ -16,7 +16,7 @@
                     },
                     {
                         background: '#fff',
-                        width: 25
+                        width: 40
                     }
                 ]
             },
@@ -29,12 +29,12 @@
                         width: 35
                     },
                     {
-                        background: '#ccc',
+                        background: '#3a78b7',
                         width: 45
                     },
                     {
                         background: '#fff',
-                        width: 15
+                        width: 20
                     }
                 ]
             },
@@ -52,7 +52,7 @@
                     },
                     {
                         background: '#eee',
-                        width: 40
+                        width: 70
                     }
                 ]
             }
@@ -66,16 +66,19 @@
     }
 
     function newLine(line, height) {
-        var lineDOM = document.createElement("div");
+        var lineDOM = document.createElement("div"),
+            elementsDOM = document.createElement("div");
 
         lineDOM.className = 'line';
+        elementsDOM.className = 'line_container'
         lineDOM.style.backgroundColor = line.background;
         lineDOM.style.height = height + 'px';
         if (line.elements.length) {
             line.elements.map(function(element) {
-                lineDOM.appendChild(printElement(element))
+                elementsDOM.appendChild(printElement(element))
             })
         }
+        lineDOM.appendChild(elementsDOM);
         setInterval(function() {
             lineDOM.style.backgroundColor = randomCoolor();
         }, line.updateTime)

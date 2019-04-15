@@ -11,12 +11,17 @@
     <script src="./index.js"></script>
     <style>
         * {
-            box-sizing: border-box;
+            box-sizing: border-box; /*// bad approach:)*/
             padding: 0;
             margin: 0;
         }
-        .line {
+        .line_container {
+            max-width: 90%;
+            margin: 0 auto;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            height: 100%;
         }
     </style>
 </body>
